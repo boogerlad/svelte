@@ -326,11 +326,6 @@ function get_value_from_dom(
 		return x`this.__value`;
 	}
 
-	// <input type='range|number' bind:value>
-	if (type === 'range' || type === 'number') {
-		return x`@to_number(this.${name})`;
-	}
-
 	if ((name === 'buffered' || name === 'seekable' || name === 'played')) {
 		return x`@time_ranges_to_array(this.${name})`;
 	}
